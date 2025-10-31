@@ -5,7 +5,7 @@
 <div align="center">
 
 [![Посетить мой сайт](https://img.shields.io/badge/🌐_Мой_сайт--визитка-000?style=for-the-badge&logo=google-chrome&logoColor=white)](https://razetka2010.github.io/Business-card-website/)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/your_telegram)
+[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/razetkaartem)
 
 ## 📊 Активность на GitHub
 
