@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сетевой город - Вход в систему</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="background-animation">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="login-card">
+        <div class="card-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Знание севера</h1>
+                <p>Образовательная платформа</p>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <input type="text" id="username" placeholder="Логин или email" required>
+                    <div class="input-highlight"></div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <input type="password" id="password" placeholder="Пароль" required>
+                    <div class="input-highlight"></div>
+                    <button type="button" class="password-toggle">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember">
+                        <span class="checkmark"></span>
+                        Запомнить меня
+                    </label>
+                    <a href="#" class="forgot-link">Забыли пароль?</a>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Войти в систему</span>
+                    <div class="btn-loader">
+                        <div class="loader"></div>
+                    </div>
+                    <i class="fas fa-arrow-right btn-icon"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="features-panel">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Отслеживайте успеваемость</h3>
+            <p>Наглядная статистика и прогресс обучения</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-comments"></i>
+            </div>
+            <h3>Общайтесь с учителями</h3>
+            <p>Прямая связь с преподавателями</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Доступ с любого устройства</h3>
+            <p>Работает на компьютерах, планшетах и телефонах</p>
+        </div>
+    </div>
+</div>
+
+<div class="notification" id="notification"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
