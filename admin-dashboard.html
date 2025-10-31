@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель главного администратора - Сетевой город</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body>
+<!-- Шапка -->
+<header class="admin-header">
+    <div class="header-left">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+                <h1>Сетевой Город</h1>
+                <span>Панель главного администратора</span>
+            </div>
+        </div>
+    </div>
+    <div class="header-right">
+        <div class="user-menu">
+            <div class="user-info">
+                <img src="https://ui-avatars.com/api/?name=Главный+Админ&background=4f46e5&color=fff" alt="Admin">
+                <span>Загрузка...</span>
+            </div>
+            <button class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Выйти
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Основной контент -->
+<div class="admin-container">
+    <!-- Боковое меню -->
+    <nav class="admin-sidebar">
+        <div class="sidebar-menu">
+            <div class="menu-section">
+                <h3>Учебные заведения</h3>
+                <a href="#" class="menu-item active" data-module="schools">
+                    <i class="fas fa-school"></i>
+                    <span>Управление школами</span>
+                </a>
+                <a href="#" class="menu-item" data-module="add-school">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Добавить школу (1.0)</span>
+                </a>
+            </div>
+
+            <div class="menu-section">
+                <h3>Администраторы</h3>
+                <a href="#" class="menu-item" data-module="school-admins">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Администраторы школ (2.0)</span>
+                </a>
+                <a href="#" class="menu-item" data-module="system-admins">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Системные администраторы (2.1)</span>
+                </a>
+            </div>
+
+            <div class="menu-section">
+                <h3>Пользователи</h3>
+                <a href="#" class="menu-item" data-module="users">
+                    <i class="fas fa-users"></i>
+                    <span>Все пользователи</span>
+                </a>
+            </div>
+
+            <div class="menu-section">
+                <h3>Роли и доступы</h3>
+                <a href="#" class="menu-item" data-module="roles">
+                    <i class="fas fa-user-tag"></i>
+                    <span>Управление ролями (2.2)</span>
+                </a>
+            </div>
+
+            <div class="menu-section">
+                <h3>Учебный процесс</h3>
+                <a href="#" class="menu-item" data-module="study-plans">
+                    <i class="fas fa-book"></i>
+                    <span>Учебные планы</span>
+                </a>
+            </div>
+
+            <div class="menu-section">
+                <h3>Система</h3>
+                <a href="#" class="menu-item" data-module="reports">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Отчеты</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основная область контента -->
+    <main class="admin-main">
+        <!-- Дашборд по умолчанию -->
+        <section id="dashboard" class="module active">
+            <div class="module-header">
+                <h2>Обзор системы</h2>
+                <div class="module-actions">
+                    <button class="btn btn-primary" id="refreshStats">
+                        <i class="fas fa-sync-alt"></i>
+                        Обновить
+                    </button>
+                </div>
+            </div>
+
+            <!-- Статистика -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon school">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="schools-count">0</h3>
+                        <p>Учебных заведений</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon user">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="users-count">0</h3>
+                        <p>Пользователей</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon admin">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="admins-count">0</h3>
+                        <p>Администраторов</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon activity">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="activity-percent">0%</h3>
+                        <p>Активность</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Быстрые действия -->
+            <div class="quick-actions">
+                <h3>Быстрые действия</h3>
+                <div class="actions-grid">
+                    <button class="action-btn" data-module="add-school">
+                        <i class="fas fa-plus"></i>
+                        <span>Добавить школу</span>
+                    </button>
+                    <button class="action-btn" data-module="school-admins">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Назначить администратора</span>
+                    </button>
+                    <button class="action-btn" data-module="reports">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Сформировать отчет</span>
+                    </button>
+                    <button class="action-btn" data-module="users">
+                        <i class="fas fa-search"></i>
+                        <span>Поиск пользователя</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Модули будут загружаться здесь -->
+        <div id="module-content"></div>
+    </main>
+</div>
+
+<!-- Уведомления -->
+<div id="notification"></div>
+
+<script src="js/real-database.js"></script>
+<script src="js/admin-modules.js"></script>
+<script src="js/admin-main.js"></script>
+</body>
+</html>
