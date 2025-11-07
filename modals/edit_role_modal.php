@@ -1,0 +1,75 @@
+<div id="editRoleModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>🎭 Редактировать роль</h3>
+            <button class="modal-close" onclick="closeModal('editRoleModal')">×</button>
+        </div>
+        <form id="editRoleForm" onsubmit="updateRole(event)">
+            <input type="hidden" id="edit_role_id" name="id">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit_roleName">Название роли *</label>
+                    <input type="text" id="edit_roleName" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit_roleDescription">Описание роли</label>
+                    <textarea id="edit_roleDescription" name="description" rows="3"></textarea>
+                </div>
+
+                <h4>🔐 Права доступа</h4>
+                <div class="permissions-grid">
+                    <div class="permission-category">
+                        <h5>📖 Управление журналом</h5>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="journal_view"> Просмотр журнала
+                        </label>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="journal_edit"> Редактирование журнала
+                        </label>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="grades_manage"> Управление оценками
+                        </label>
+                    </div>
+
+                    <div class="permission-category">
+                        <h5>👨‍🎓 Управление учениками</h5>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="students_view"> Просмотр учеников
+                        </label>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="students_edit"> Редактирование учеников
+                        </label>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="attendance_manage"> Управление посещаемостью
+                        </label>
+                    </div>
+
+                    <div class="permission-category">
+                        <h5>📊 Отчетность</h5>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="reports_view"> Просмотр отчетов
+                        </label>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="reports_generate"> Генерация отчетов
+                        </label>
+                    </div>
+
+                    <div class="permission-category">
+                        <h5>⚙️ Администрирование</h5>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="users_manage"> Управление пользователями
+                        </label>
+                        <label class="permission-item">
+                            <input type="checkbox" name="permissions[]" value="settings_manage"> Управление настройками
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('editRoleModal')">Отмена</button>
+                <button type="submit" class="btn-primary">💾 Сохранить изменения</button>
+            </div>
+        </form>
+    </div>
+</div>
